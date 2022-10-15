@@ -1,0 +1,980 @@
+/* start variables */
+:root{
+    --main-color:#19c8fa;
+    --transparent-color:rgb(15 116 143 / 70%);
+    --section-padding: 100px;
+}
+
+/* End variables */
+
+/* Global Rules */
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Source Sans Pro', sans-serif;
+}
+ul{
+    list-style: none;
+}
+.container{
+    padding-left:15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* small */
+@media(min-width:768px){
+    .container{
+        width: 750px;
+    }
+}
+/* medium */
+@media(min-width:992px){
+    .container{
+        width: 970px;
+    }
+}
+@media(min-width:1200px){
+    .container{
+        width: 1170px;
+    }
+}
+
+/* End global Ruls */
+
+/* start components */
+
+.main-heading{
+    text-align: center;
+}
+.main-heading h2{
+    font-size: 40px;
+    font-weight: normal;
+    position: relative;
+    margin-bottom: 70px;
+    text-transform: uppercase;
+}
+.main-heading h2::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2px;
+    background-color: #333;
+    bottom: -30px;
+    width: 120px;
+}
+.main-heading h2::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid #333;
+    bottom: -38px;
+    background-color: #fff;
+}
+.main-heading p{
+    width: 550px;
+    margin: 0 auto 100px;
+    max-width: 100%;
+    line-height: 2;
+    color: #777;
+}
+/* End components */
+
+
+
+/* start header */
+
+header{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+
+header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 97px;
+}
+
+header .container::after{
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: #a2a2a2;
+    bottom: 0;
+    width: calc(100% - 30px);
+    left: 15px;
+}
+
+header .logo{
+    height: 40px;
+}
+
+header nav{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+header nav .toggle-menu{
+    color: #fff;
+    font-size: 22px;
+    cursor: pointer;
+}
+@media(min-width:768px){
+    header nav .toggle-menu{
+        display: none;
+    }
+}
+
+header nav ul {display: flex;}
+
+@media(max-width:767px){
+    header nav ul{
+        display: none;
+    }
+}
+
+header nav .toggle-menu:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color:rgb(0, 0, 0 / 50%);
+}
+header nav ul li a{padding: 15px;}
+
+header nav ul li a {
+    padding: 40px 10px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.3s;
+    position: relative;
+    z-index: 2;
+}
+
+header nav ul li a.active,
+header nav ul li a:hover{
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+header .form{
+    width: 40px;
+    height: 30px;
+    position: relative;
+    margin-left: 30px;
+    border-left: 1px solid #fff;
+}
+header .form i{
+    color: #fff;
+    position: absolute;
+    font-size: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    cursor: pointer;
+}
+
+
+/* =============================================End header========================================== */
+
+/* start landing */
+
+.landing{
+    background-image: url(images/bg2.jpg);
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    position: relative;
+}
+.landing .layer{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0 ,0.3);
+}
+.landing .text{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60%;
+    padding: 50px;
+    background-color: var(--transparent-color);
+    color: #fff;
+    display: flex;
+    justify-content: flex-end;
+}
+.landing .text .contant{
+    max-width: 500px;
+}
+@media(max-width:767px){
+    .landing .text{
+        width: 100%;
+    }
+    .landing .text .contant{
+        max-width: 100%;
+    }
+}
+.landing .contant h2{
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.landing .contant p{
+    font-size: 14px;
+    line-height: 2;
+}
+.landing .change-background{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #fff;
+}
+@media(max-width:767px){
+    .landing .change-background{
+        display: none;
+    }
+}
+.landing .fa-angle-left{
+    left: 30px; 
+    border: 1px solid white;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.landing .fa-angle-right{
+    right: 30px;
+    border: 1px solid white;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.landing .fa-angle-right:hover{
+    background-color: var(--main-color);
+}
+.landing .bullets{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+    display: flex;
+}
+.landing .bullets li{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.landing .bullets li.active{
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+
+/* ============================================= End landing ========================================== */
+
+/* start serives section */
+
+.serives{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+@media(min-width:768px){
+    .serives .serives-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(450px,1fr));
+        grid-column-gap: 40px;
+        grid-row-gap: 60px;
+    }
+}
+.serives .box-serv{
+    display: flex;
+}
+.serives .box-serv i{
+    margin-right: 50PX;
+}
+@media(max-width:767px){
+    .serives .box-serv{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    .serives .box-serv i{
+        margin: 0 0 30px;
+    }
+}
+.serives .box-serv h3{
+    margin-bottom: 30px;
+    color: var(--main-color);
+}
+.serives .box-serv p{
+    line-height: 2;
+    color: #777;
+}
+
+/* ====================================== End serives section ========================================== */
+
+/* start OUR DESIGNS section  */
+
+.OUR-DESIGNS{
+    background-color: #1f2021;
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+}
+.OUR-DESIGNS .pic,
+.OUR-DESIGNS .text{
+    position: relative;
+    z-index: 2;
+    flex: 1;
+}
+.OUR-DESIGNS .pic{
+    text-align: center;
+}
+@media(max-width:767px){
+    .OUR-DESIGNS .pic{
+        display: none;
+    }
+}
+.OUR-DESIGNS .pic img{
+    position: relative;
+    bottom: -120px;
+}
+.OUR-DESIGNS .pic img.pic-1{
+    left: 80px;
+    z-index: 1;
+}
+.OUR-DESIGNS .text {
+    color: #fff;
+    padding: 40px;
+    background-color: var(--transparent-color);
+}
+.OUR-DESIGNS .text h2{
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    padding-left: 40px;
+}
+.OUR-DESIGNS .text ul li{
+    padding: 15px 0;
+    padding-left: 40px;
+}
+.OUR-DESIGNS .text ul li::before{
+    font-family: 'font Awesome 5 free';
+    content: '\f26c';
+    font-weight: 900;
+    margin-right: 20px;
+}
+
+/* ====================================== End OUR DESIGNS section ========================================== */
+
+/* Start Portfolio section */
+
+.Portfolio{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.Portfolio .shuffle{
+    display: flex;
+    justify-content: center;
+}
+.Portfolio .shuffle li{
+    padding: 10px;
+    cursor: pointer;
+}
+.Portfolio .shuffle li.active{
+    background-color: var(--main-color);
+    color: #fff;
+}
+.Portfolio .images-container{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+@media(min-width:768px){
+    .Portfolio .images-container{
+        flex-basis: 50%;
+    }
+}
+@media(min-width:1199px){
+    .Portfolio .images-container{
+        flex-basis: 25%;
+    }
+}
+.Portfolio .images-container .box-img{
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    max-width: 100%;
+}
+.Portfolio .images-container .box-img:hover .caption{
+    bottom: 0;
+}
+.Portfolio .images-container .box-img img{
+    width: 300px;
+    height: 300px;
+    transition: 0.3s; 
+}
+.Portfolio .images-container .box-img:hover img{
+    transform: rotate(3deg) scale(1.1);
+}
+.Portfolio .images-container .box-img .caption{
+    position: absolute;
+    left: 0;
+    padding: 20px;
+    background-color: #fff;
+    width: 100%;
+    transition: 0.3s;
+    bottom: -100%;
+}
+.Portfolio .images-container .box-img .caption h3{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.Portfolio .images-container .box-img .caption p{
+    color: var(--main-color);
+}
+/* ====================================== End Portfolio section ========================================== */
+
+/* Start About Us section */
+
+.About-Us{
+    padding-top: var(--section-padding);
+    text-align: center;
+    overflow: hidden;
+}
+.About-Us img{
+    position: relative;
+    bottom: -30px;
+    margin-top: -30px;
+    max-width: 100%;
+}
+@media(max-width:767px){
+    .About-Us img{
+        bottom: -60px;
+        margin-top: -60px;
+    }
+}
+/* ====================================== End  About Us  section ========================================== */
+
+/* Start Stats Section */
+
+.stats{
+    background-color: #121116;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+.stats .container{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.stats .container .box{
+    color: #fff;
+    padding: 50px;
+    background-color: var(--transparent-color);
+}
+@media(max-width:767px){
+    .stats .container .box{
+        flex-basis: 100%;
+    }
+}
+@media(min-width:768px){
+    .stats .container .box{
+        flex-basis: 50%;
+    }
+}
+@media(min-width:992px){
+    .stats .container .box{
+        flex-basis: 25%;
+    }
+}
+.stats .container .box i{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    background-color: #121116;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+.stats .container .box .number{
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+.stats .container .box p{
+    font-size: 14px;
+}
+/* ====================================== End Stats section ========================================== */
+
+/* Start my skills section */
+.skills{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.skills .container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+@media(min-width:992px){
+    .skills .container > div{
+        flex-basis: 45%;
+    }
+}
+.skills .container > div > h2 {
+    margin: 0 0 30px;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+}
+.skills .container > div > p {
+    color: #777;
+    line-height: 2;
+    margin-bottom: 50px;
+    text-align: center;
+}
+.skills .testimonials .contant{
+    display: flex;
+    /* في حالة تمدد الصوره في خاصية الـ flex */
+    align-items: center; 
+    margin-bottom: 30px;
+}
+.skills .testimonials .contant img{
+    width: 100px;
+    border-radius: 50%;
+    margin-right: 50px;
+}
+@media(max-width:767px){
+    .skills .testimonials .contant{
+        flex-direction: column;
+        text-align: center;
+    }
+    .skills .testimonials .contant img{
+        margin: 0 auto 20px;
+    }
+}
+.skills .testimonials .text{
+    line-height: 1.8;
+    border-bottom: 1px solid #ccc;
+}
+.skills .testimonials p{
+    color: #777;
+    text-align: right;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.skills .testimonials .bullets{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.skills .testimonials .bullets li{
+    width: 15px;
+    height: 15px;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.skills .testimonials .bullets li.active{
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+}
+.skills .our-skills .progress{
+    margin-bottom: 40px;
+}
+.skills .our-skills .progress h3{
+    margin-bottom: 15px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.skills .our-skills .progress .prog{
+    background-color: #dedadc;
+    height: 25px;
+}
+.skills .our-skills .progress .prog span{
+    display: block;
+    background-color: var(--main-color);
+    height: 100%;
+    position: relative;
+}
+.skills .our-skills .progress .prog span::before{
+    content: attr(data-progress);
+    position: absolute;
+    background-color: black;
+    color: #fff;
+    top: -40px;
+    right: -18px;
+    padding: 4px 0;
+    width: 40px;
+    text-align: center;
+    border-radius: 4px;
+}
+.skills .our-skills .progress .prog span::after{
+    content: "";
+    position: absolute;
+    border-style: solid;
+    border-width: 8px;
+    border-color: black transparent transparent;
+    right: -8px;
+    top: -15px;
+}
+/* ====================================== End my skills section ========================================== */
+
+/* Start quote section */
+.Quote{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: #121116;
+}
+.Quote .contant{
+    text-align: center;
+}
+.Quote .contant q{
+    color: #fff;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 1.6;
+}
+.Quote .contant span{
+    color: #fff;
+    margin-top: 15px;
+    display: block;
+}
+/* ====================================== End quote section ========================================== */
+
+/* Start PRICING section */
+.PRICING{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.PRICING .plans{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    gap: 30px;
+}
+.PRICING .plans .plan{
+    background-color: #fcfcfc;
+    text-align: center;
+}
+.PRICING .plans .plan .head{
+    padding: 30px 20px;
+    border-top: 1px solid var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+.PRICING .plans .plan .head h3{
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+.PRICING .plans .plan .head span{
+    font-size: 60px;
+    font-weight: bold;
+}
+.PRICING .plans .plan .head span::before{
+    content: "$";
+    font-size: 25px;
+    position: relative;
+    top: -40px;
+    margin-right: 15px;
+    font-weight: normal;
+}
+.PRICING .plans .plan .head span::after{
+    content: "/Mo";
+    font-size: 20px;
+    position: relative;
+    right: -15px;
+}
+.PRICING .plans .plan ul{
+    border-bottom: 1px solid var(--main-color);
+}
+.PRICING .plans .plan ul li{
+    padding: 20px;
+    position: relative;
+}
+.PRICING .plans .plan ul li:not(:last-child)::after{
+    content: "";
+    width: 120px;
+    height: 1px;
+    position: absolute;
+    background-color: var(--main-color);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+.PRICING .plans .plan .link a{
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: 1px solid var(--main-color);
+    width: fit-content;
+    margin: 30px auto;
+}
+.PRICING .plans .plan .link a:hover{
+    background-color: var(--main-color);
+    color: #fff;
+    transition: 0.4s;
+}
+.PRICING .contact-text{
+    text-align: center;
+    margin: 50px 0 20px;
+    font-size: 20px;
+}
+.PRICING .contact-link{
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 15px 20px;
+    text-decoration: none;
+}
+.PRICING .contact-link:hover{
+    color: #121116;
+    transition: 0.4s;
+}
+/* ====================================== End PRICING section ========================================== */
+
+/* Start Subscribe Section */
+.Subscribe{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: #121116;
+}
+.Subscribe .container{
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+@media(max-width:991px){
+    .Subscribe .container{
+        flex-direction: column;
+    }
+}
+.Subscribe form{
+    display: flex;
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+}
+.Subscribe form i{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25px;
+    color: #fff;
+}
+.Subscribe form input[type="email"]{
+    border: 1px solid #fff;
+    border-right: none;
+    background-color: transparent;
+    padding: 20px 20px 20px 60px;
+    caret-color: var(--main-color);
+    width: calc(100% - 130px);
+    color: #fff;
+}
+.Subscribe form input[type="submit"]{
+    width: 130px;
+    background-color: var(--main-color);
+    color: #fff;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    font-weight:bold ;
+    border-left: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.Subscribe form input[type="submit"]:hover{
+    color: #121116;
+    transition: 0.4s;
+}
+.Subscribe form ::placeholder{
+    color: #fff;
+}
+.Subscribe p{
+    line-height: 2;
+    margin-left: 50px;
+    color: #fff;
+}
+@media(max-width:991px){
+    .Subscribe p{
+        margin: 30px 0 0;
+        text-align: center;
+    }
+}
+/* ====================================== End Subscribe  section ========================================== */
+
+/* Start Contact US section  */
+.Contact-Us{
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+.Contact-Us .contant{
+    display: flex;
+    justify-content: space-between;
+}
+@media(max-width:767px){
+    .Contact-Us .contant{
+        flex-direction: column;
+    }
+}
+.Contact-Us .contant .left-side{
+    flex-basis: 70%;
+}
+.Contact-Us .contant .left-side .main-input{ 
+    display: block;
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+    width: 100%;
+}
+.Contact-Us .contant .left-side textarea.main-input{
+    height: 200px;
+}
+.Contact-Us .contant .left-side input[type="submit"]{
+    padding: 20px;
+    background-color: var(--main-color);
+    color: #fff;
+    text-transform: uppercase;
+    border: none;
+    display: flex;
+    margin-left: auto;
+    cursor: pointer;
+}
+.Contact-Us .contant .left-side input[type="submit"]:hover{
+    color: #121116;
+    transition: 0.4s;
+}
+.Contact-Us .contant .rigth-side{
+    flex-basis: 25%;
+}
+@media(max-width:767px){
+    .Contact-Us .contant .rigth-side{
+        order: -1;
+        text-align: center;
+    }
+}
+.Contact-Us .contant .rigth-side h4{
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: bold;
+    font-size: 18px;
+}
+.Contact-Us .contant .rigth-side .phone{
+    display: block;
+    color: #777;
+    margin-bottom: 10px;
+}
+.Contact-Us .contant .rigth-side h4:nth-of-type(2){
+    margin-top: 65px;
+}
+@media(max-width:767px){
+    .Contact-Us .contant .rigth-side h4:nth-of-type(2){
+        margin-top: 30px;
+    }
+}
+.Contact-Us .contant .rigth-side address{
+    color: #777;
+    line-height: 2;
+}
+@media(max-width:767px){
+    .Contact-Us .contant .rigth-side address{
+        margin-bottom: 30px;
+    }
+}
+/* ====================================== End Contact US section ========================================== */
+
+/* Start footer section */
+.footer{
+    padding-top: var(--section-padding);
+    padding-bottom: 50px;
+    background-color: #121116;
+}
+.footer .contant{
+    text-align: center;
+}
+.footer .contant img{
+    width: 90px;
+}
+.footer .contant h3{
+    margin-top: 25px;
+    color: #fff;
+    font-size: 20px;
+    position: relative;
+}
+.footer .contant h3::after{
+    content: "";
+    width: 160px;
+    height: 1px;
+    position: absolute;
+    background-color: var(--main-color);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -15px;
+}
+.footer .contant ul{
+    margin-top: 30px;
+}
+.footer .contant ul li{
+    display: inline-block;
+    margin: 8px;
+}
+.footer .contant ul li i{
+    font-size: 20px;
+    color: #fff;
+}
+.footer .contant ul li i:hover{
+    cursor: pointer;
+    color: var(--main-color);
+}
+.footer .contant p{
+    margin-top: 50px;
+    color: #fff;
+    font-size: 15px;
+}
+.footer .contant p a{
+    text-decoration: none;
+    color: var(--main-color);
+}
+.footer .contant  span{
+    color: var(--main-color);
+    font-size: 15px;
+}
+/* ====================================== End Contact US section ========================================== */
